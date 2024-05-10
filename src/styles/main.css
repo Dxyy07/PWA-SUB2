@@ -1,0 +1,415 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d7d7d7;
+  width: 100%;
+  height: 100%;
+  color : #3A3132;
+  font-family: 'Jost', sans-serif;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 99999;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+header {
+  background-color: #EEEEEE;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0;
+  position: fixed;
+  z-index: 999;
+}
+
+.logo h1{
+  font-family: 'Pacifico', sans-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 26px;
+}
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  list-style: none;
+  align-items: center;
+  padding: 10px 0;
+  transition: all 1s;
+}
+
+nav ul li {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+nav ul.hidden {
+  display: none;
+
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: #3A3132;
+  font-size: 24px;
+  padding: 5px;
+  font-weight: 500;
+  transition: all ease-in-out 0.5s;
+}
+
+nav ul li a:hover {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+#hamburger {
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 28px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#hamburger:hover {
+  font-weight: 900;
+}
+
+.hero {
+  min-height: 790px;
+  width: 100%;
+  background-position: center;
+  background-image: url('../public/images/heros/hero-image_2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-image: fill 0 linear-gradient(#0001, #000);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.hero .inner {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.hero .inner h2 {
+  font-size: 30px;
+  text-align: center;
+  color: #dddddd;
+  padding: 0px 10px 30px;
+}
+
+.hero .inner p { 
+  font-family: 'Rubik';
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  word-spacing: 2px;
+  padding: 0px 13px 30px ;
+}
+
+.explore-now {
+  padding: 15px 30px;
+  border: 2px solid #2c2c2c;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.4s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  margin-top: 70px;
+}
+
+.explore-now::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.explore-now:hover::after {
+  transform: scale(4);
+}
+
+.explore-now:hover {
+  border-color: #666666;
+  background: #292929;
+}
+
+.explore-now:focus {
+  border-color: #666666;
+  background: #292929;
+}
+
+.explore {
+  margin: 40px 0 20px;
+}
+.explore h3 {
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  font-family: 'Rubik';
+}
+
+
+.card {
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.card-content {
+    padding: 16px;
+
+}
+
+.card-content a {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Rubik';
+  padding: 2px;
+  color: #666666;
+  transition: all ease-in-out 0.5s;
+}
+
+.card-content a:hover{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.card h2 {
+    margin: 0 0 8px;
+}
+
+.card p {
+    margin: 0 0 4px;
+}
+
+#restaurants {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.container {
+  transition: all 0.5s ease;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.container:hover{
+  transform: scale(1) translateY(-10px) ; 
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.container-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1.5rem;
+}
+
+.footer-column {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  display: none;
+}
+
+.footer-column h3 {
+  margin-top: 0;
+  padding: 5px 0;
+  font-size: 24px;
+}
+
+.footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 5px;
+  min-width: 44px;
+  min-height: 44px;
+
+}
+
+.footer-column a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 9px;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+
+.copyright {
+  text-align: center;
+  font-size: 20px;
+}
+
+/*breakpoint Tablet*/
+
+@media screen and (min-width:  768px) {
+  #restaurants {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .card img {
+    height: 300px;
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  nav {
+    width: 70%;
+
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  nav ul.hidden {
+    display:  flex;
+    margin-right: 90px;
+    justify-content: space-around;
+  }
+
+  header {
+    flex-wrap: nowrap;
+  }
+
+  .logo h1 {
+    font-size: 26px;
+    padding: 2px;
+  }
+
+  nav ul li {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  nav ul li a {
+    font-size: 23px;
+    padding: 6px;
+  }
+}
+
+
+/*breakPoint Laptop*/
+
+@media screen and (min-width: 1024px) {
+  #restaurants {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .card img {
+    height: 300px;
+  }
+
+  
+  .footer-column {
+    display:grid ;
+  }
+
+  .logo h1 {
+    font-size: 28px;
+  }
+}
+
+/*breakpoint desktop/ > 1200px */
+
+@media screen and (min-width: 1200px){
+  #restaurants{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero {
+    min-width: 1000px;
+  }
+
+  #restaurants > .container:nth-child(20n+20) {
+    grid-column:-1/4;
+  }
+
+
+  .logo h1 {
+    padding-left: 20px;
+    
+  }
+
+  .order {
+    margin-right: 20px;
+  }
+
+  .logo h1 {
+    font-size: 30px;
+  }
+}
